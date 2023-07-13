@@ -45,4 +45,5 @@ The goal section provides a concise summary of the main objective or purpose of 
 In the tech section, we provide information about the technology stack, dependencies, and any technical details related to the project.
 
 ## Credits
-We would like to give credit to the following individuals, organizations, and resources that have contributed to the project or provided inspiration:
+Logo from [SeekPNG](https://www.seekpng.com/ipng/u2q8y3y3q8u2w7y3_logo-picnic-basket/)
+Favicon generated from [Favicon.io](https://favicon.io/)
