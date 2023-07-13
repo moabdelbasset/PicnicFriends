@@ -33,6 +33,14 @@ The goal section provides a concise summary of the main objective or purpose of 
 - ➡️ Target Audience
 - ➡️ Benefits
 
+## Wireframes
+
+![landing-page](readme-images/landing-page.jpeg)
+![authentication](readme-images/auth.jpeg)
+![landing-page-signed-in](readme-images/landing-page-signed-in.jpeg)
+![events](readme-images/events.jpeg)
+
+
 ## Tech
 In the tech section, we provide information about the technology stack, dependencies, and any technical details related to the project.
 
