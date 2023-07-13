@@ -5,7 +5,7 @@ html{
 }
 
 body, #map {
-    height: 100%; 
+    height: 90%; 
     width: 100vw;
     padding: 0;
     margin: 0;
@@ -13,6 +13,7 @@ body, #map {
 
 /* Header */
 .navbar {
+    width: 100%;
     background-color: var(--off-white);
     box-shadow: var(--smal-box-shadow);
 }
