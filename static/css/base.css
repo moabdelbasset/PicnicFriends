@@ -10,3 +10,39 @@ body, #map {
     padding: 0;
     margin: 0;
 }
+
+/* Header */
+.navbar {
+    background-color: var(--off-white);
+    box-shadow: var(--smal-box-shadow);
+}
+
+a.nav-link {
+    color: var(--black);
+}
+
+img.logo {
+    width: 18.75rem;
+}
+
+.active {
+    border-bottom: 2px solid var(--blue);
+    font-weight: 500;
+}
+
+
+/* Footer */
+footer {
+    flex-shrink: 0;
+    background-color: var(--off-white);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: var(--border);
+}
+
+.social-icon {
+    height: 2rem;
+    margin: 1rem;
+}
