@@ -46,3 +46,12 @@ footer {
     height: 2rem;
     margin: 1rem;
 }
+
+/* Form */
+
+.form {
+    width: 100%;
+    margin: 3% auto;
+    box-shadow: var(--smal-box-shadow);
+    border-radius: 5px;
+}
