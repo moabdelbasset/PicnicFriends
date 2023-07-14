@@ -1,0 +1,18 @@
+#map {
+    height: 90%; 
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+
+.event-icon {
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    border: 1px solid rgb(57, 57, 57);
+    background-color: rgba(61, 76, 123, 0.458);
+    background-size: cover;
+    position: absolute;
+    top: -12rem;
+    left: -5.5rem;
+}
