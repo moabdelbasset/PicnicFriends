@@ -11,10 +11,7 @@
   <p>{% blocktrans %}Already have an account? Then please <a class="link" href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
   <form class="form p-2" id="signup_form" method="post" action="/accounts/signup/">
-    {% csrf_token %}
-    <input type="hidden" name="csrfmiddlewaretoken"
-      value="CNuxaXL0zBmVEc1vr1eZ9B0bLEeWyGDklwDoU32SejnjGog80iJnvBhTy6cKkglh">
-  
+    {% csrf_token %}  
     <div id="div_id_email" class="mb-3"> <label for="id_email" class="form-label requiredField">
         Username<span class="asteriskField">*</span> </label> <input type="text" name="username" placeholder="Choose a username*"
         autocomplete="username" minlength="4" maxlength="150" class="textinput form-control" required="" id="id_username">

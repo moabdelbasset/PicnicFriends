@@ -14,20 +14,16 @@
 
       <p>{% blocktrans %}
         <a class="link" href="{{ signup_url }}">Sign up</a> to create an event! {% endblocktrans %}</p>
-
-        
-      <form class="form p-2" method="POST" action="/accounts/login/">
-        {% csrf_token %}
-        <input type="hidden" name="csrfmiddlewaretoken"
-          value="LrjjMelEzTkAuw1027AGgB6gE1FX0yvBuasawkCweBlYwIgDBo54CBnYrtDLM8dy">
-        <p><input type="text" name="login" placeholder="Username" autocomplete="email" required="" id="id_login"></p>
-        <p><input type="password" name="password" placeholder="Password" autocomplete="current-password" required=""
-            id="id_password"></p>
-            {% if redirect_field_value %}
-            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-            {% endif %}
-        <button class="btn w-25 mb-2" type="submit">Sign in</button>
-      </form>
+        <form class="form p-2" method="POST" action="/accounts/login/">
+          {% csrf_token %}
+          <p><input type="text" name="login" placeholder="Username" autocomplete="email" required="" id="id_login"></p>
+          <p><input type="password" name="password" placeholder="Password" autocomplete="current-password" required=""
+              id="id_password"></p>
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          <button class="btn w-25 mb-2" type="submit">Sign in</button>
+        </form>
     </div>
   </div>
 </div>
