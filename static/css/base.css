@@ -32,7 +32,29 @@ img.logo {
     font-weight: 500;
 }
 
+/* Add Event Page */
 
+.bg{
+  background: #818f55;
+
+}
+.card{
+  overflow: hidden;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  height: 40vh;
+}
+.card-form{
+    border-radius: 10px;
+    width: 100%;
+    display: table;
+}
+.bg-card{
+  background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('/static/images/pexels-elevate-1267239.webp');
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 /* Footer */
 footer {
     flex-shrink: 0;
