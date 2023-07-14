@@ -17,6 +17,7 @@ body, #map {
     box-shadow: var(--smal-box-shadow);
     width: 100%;
     height: auto;
+
 }
 
 a.nav-link {
@@ -55,6 +56,7 @@ img.logo {
     background-position: center;
     background-repeat: no-repeat;
 }
+
 /* Footer */
 footer {
     flex-shrink: 0;
@@ -67,7 +69,8 @@ footer {
 }
 
 .social-icon {
-    height: 2rem;
+    height: 20px;
+    margin-top: 1rem;
     margin: 1rem;
 }
 

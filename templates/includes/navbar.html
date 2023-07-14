@@ -2,42 +2,43 @@
 
 <header>
   {% with request.resolver_match.url_name as url_name %}
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-        <!-- Logo -->
-          <a class="navbar-brand" href="#"><img src="{% static 'images/PF_logo.png' %}" alt="Picnic Friends" class="logo"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!-- Navigation items -->
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto mb-2">
-              <li class="nav-item">
-                <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link {% if url_name == 'add_event' %}active{% endif %}" aria-current="page" href="{% url 'add_event' %}">Add Event</a>
-              </li>
-              <li class="nav-item">
-              {% if request.user.is_authenticated %}
-              <li class="nav-item">
-                <a class="nav-link {% if url_name == 'profile' %}active{% endif %}" href="{% url 'profile' request.user.id %}">Profile</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}" href="/accounts/logout/">Logout</a>
-              </li>
-              {% else %}
-              <li class="nav-item">
-                <a class="nav-link {% if url_name == 'accounts_signup' %}active{% endif %}" href="/accounts/signup/">Register</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}" href="/accounts/login/">Login</a>
-              </li>
-              {% endif %}
-            </ul>
-          </div>
-        </div>
-      </nav>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/PF_logo.png' %}" alt="Picnic Friends" class="logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page"
+              href="{% url 'home' %}">Home</a>
+          </li>
+          {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link {% if url_name == 'profile' %}active{% endif %}"
+              href="{% url 'profile' request.user.id %}">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}"
+              href="/accounts/logout/">Sign out</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link {% if url_name == 'accounts_signup' %}active{% endif %}"
+              href="/accounts/signup/">Sign up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}" href="/accounts/login/">Sign in</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
   {% endwith %}
 </header>
 
