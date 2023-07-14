@@ -27,7 +27,7 @@ class EditProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Profile
 
     def form_valid(self, form):
-        self.success_url = f'/profiles/user/{self.kwargs["pk"]}/'
+        self.success_url = f'/profile/user/{self.kwargs["pk"]}/'
         return super().form_valid(form)
 
     def test_func(self):

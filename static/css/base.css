@@ -123,3 +123,30 @@ footer {
   .form-label {
     display: none;
   }
+
+  /* Profiles */
+
+.profile-img {
+  width: 280px;
+  margin: 0 auto;
+}
+
+.profile-img img {
+  border-radius: 8px;
+  width: 100%;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info {
+  width: 100%;
+  text-align: center;
+}
+
+.profile-recipes {
+  width: 100%;
+}
