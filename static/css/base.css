@@ -17,6 +17,7 @@ body, #map {
     box-shadow: var(--smal-box-shadow);
     width: 100%;
     height: auto;
+
 }
 
 a.nav-link {
@@ -32,7 +33,6 @@ img.logo {
     font-weight: 500;
 }
 
-
 /* Footer */
 footer {
     flex-shrink: 0;
@@ -45,7 +45,8 @@ footer {
 }
 
 .social-icon {
-    height: 2rem;
+    height: 20px;
+    margin-top: 1rem;
     margin: 1rem;
 }
 
