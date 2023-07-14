@@ -5,7 +5,7 @@ html{
 }
 
 body, #map {
-    height: 100%; 
+    height: 90%; 
     width: 100vw;
     padding: 0;
     margin: 0;
@@ -55,3 +55,44 @@ footer {
     box-shadow: var(--smal-box-shadow);
     border-radius: 5px;
 }
+
+.form input[type="text"],
+  .form input[type="password"] {
+    border-radius: 5px;
+    border: 1px solid green;
+    padding: 5px;
+  }
+
+  .btn {
+    background-color: #FDE59A;
+    color: green;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-style: italic;
+  }
+
+  .btn:hover {
+    background-color: lightgreen;
+    color: green;
+
+  }
+
+  .link {
+    color: green;
+    text-decoration: none;
+  }
+
+  .link:hover {
+    color: lightgreen;
+    text-decoration: none;
+  }
+  
+  .sign-in {
+    color: green;
+  }
+
+  .form-label {
+    display: none;
+  }
