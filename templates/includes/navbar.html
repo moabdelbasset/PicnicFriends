@@ -4,7 +4,7 @@
   {% with request.resolver_match.url_name as url_name %}
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="{% static 'images/PF_logo.png' %}" alt="Picnic Friends" class="logo"></a>
+      <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/PF_logo.png' %}" alt="Picnic Friends" class="logo"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -22,15 +22,15 @@
           </li>
           <li class="nav-item">
             <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}"
-              href="/accounts/logout/">Logout</a>
+              href="/accounts/logout/">Sign out</a>
           </li>
           {% else %}
           <li class="nav-item">
             <a class="nav-link {% if url_name == 'accounts_signup' %}active{% endif %}"
-              href="/accounts/signup/">Register</a>
+              href="/accounts/signup/">Sign up</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}" href="/accounts/login/">Login</a>
+            <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}" href="/accounts/login/">Sign in</a>
           </li>
           {% endif %}
         </ul>
