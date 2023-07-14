@@ -10,7 +10,7 @@
 
   <p>{% blocktrans %}Already have an account? Then please <a class="link" href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
-  <form class="form p-2" id="signup_form" method="post" action="/accounts/signup/">
+  <form class="form p-2" id="signup_form" method="post" action="/accounts/login/">
     {% csrf_token %}  
     <div id="div_id_email" class="mb-3"> <label for="id_email" class="form-label requiredField">
         Username<span class="asteriskField">*</span> </label> <input type="text" name="username" placeholder="Choose a username*"
