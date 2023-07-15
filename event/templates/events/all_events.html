@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block extra_title %}All Events{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-5 position-relative">
+        <a href="{% url 'add_event' %}"><button class="btn mt-5 mr-5 position-absolute top-0 end-0"><strong>
+                    Create a new event
+                </strong></button></a>
+    </div>
+    <div class="row mt-5">
+        <h2 class="card-title d-flex justify-content-center mt-5 mb-2">Upcomming Events</h2>
+    </div>
+
+    {% for event in event %}
+    <div class="card h-100">
+
+        <div class="card-header card-events">
+
+            <h3>{{event.name}}</h3>
+        </div>
+        <div class="row h-100">
+            <div class="col-md-6 ">
+                {% if event.image %}
+                <img src="{{ event.image.url }}" class="img-fluid" alt="{{ event.name }}" >
+                {% else %}
+                <img class="img-fluid" src="/media/images/noimage.png" alt="{{ event.name }}"
+                style=" height: 35rem; width: auto;">
+                {% endif %}
+            </div>
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h6 class="card-title">Address: {{ event.address }}</h6>
+                    <p class="card-text">
+                    <ul class="list-group-flush">
+                        <li class="list-group-item">Date and time: {{ event.event_date }}</li>
+                        <li class="list-group-item">Organizer: {{ event.author }}</li>
+                        <li class="list-group-item">Phone no: {{ event.phone }}</li>
+                        <li class="list-group-item">Email address: {{ event.email }}</li>
+                        <li class="list-group-item">Location: {{ event.address }}</li>
+                        <li class="list-group-item">Attendees: </li><br>
+                        {% for user in event.attendees.all %}
+                            {{ user }} <br>
+                        {% endfor %}
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer pt-2 pb-5 h-100 text-mute position-relative">
+           <a href="{% url 'update_event' event.id%}"><button class="btn position-absolute bottom-0 start-0"><strong>
+            Update Event
+        </strong></button> </a>
+        <a href="{% url 'delete_event' event.id%}"><button class="btn position-absolute bottom-0 end-0"><strong>
+            Delete Event
+        </strong></button> </a>
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+{% endblock %}
