@@ -1,13 +1,15 @@
 //Leaflet map that renders the users location
 
 
-var map = L.map('map', {
+const map = L.map('map', {
     center: [53.251042, -6.150902],
     zoom: 9,
     minZoom: 9,
     maxZoom: 9,
     attribution: '© OpenStreetMap',
-    preferCanvas: true
+    preferCanvas: true,
+    dragging: false,
+    scrollWheelZoom: false
 })
 
 L.tileLayer(
@@ -15,20 +17,50 @@ L.tileLayer(
     {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'},
 ).addTo(map);
 
+// const events = document.getElementById('events');
+
+const events = [
+    { 
+        time: "10:00 AM",
+        date: "Saturday, 22nd July",
+        title: "Beach Party",
+        img: "url('./static/images/toa-heftiba.jpg')",
+        lat: "53.2",
+        lng: "-6.1"
+    },
+    { 
+        time: "3:00 PM",
+        date: "Saturday, 22nd July",
+        title: "Picnic on the Heath",
+        img: "url('./static/images/taisiia-shestopal.jpg')",
+        lat: "53.27",
+        lng: "-6.15"
+    },
+    { 
+        time: "11:00 AM",
+        date: "Sunday, 23rd July",
+        title: "Sunday Brunch",
+        img: "url('./static/images/calvin-shelwell.jpg')",
+        lat: "53.22",
+        lng: "-6.15"
+    }
+    
+
+]
+
 
 const getUserLocation = () => {
     let location = {};
+    // a location in Dublin
     location.lat = 53.251042
-        location.lng = -6.150902
-    // if ('geolocation' in navigator) {
+    location.lng = -6.150902
+    if ('geolocation' in navigator) {
         
-    //     // Geolocation is supported
-    //     navigator.geolocation.getCurrentPosition(
-    //         function (position) {
-    //             location.lat = position.coords.latitude;
-    //             location.lng = position.coords.longitude;
-    //             console.log(location)
-    //             // map.panTo([location.lat, location.lng])
+        // Geolocation is supported
+        navigator.geolocation.getCurrentPosition(
+            function (position) {
+                location.lat = position.coords.latitude;
+                location.lng = position.coords.longitude;
                 map.flyTo([location.lat, location.lng], 12)
                 map.setMaxZoom(18);
                 map.setMinZoom(5);
@@ -37,31 +69,50 @@ const getUserLocation = () => {
                     const id = `event-icon-nr${i}`
                     customMarker(id);
                 }
-    //         },
-    //         // if no location is provided, set the location to Dublin
-    //         // close to Code Institute's office
-    //         function (error) {
-    //             location.lat = 53.251042
-                // location.lng = -6.150902
-    //         }
-    //     );
-
-    // } else {
-    //     // if Geolocation is not supported set the location to Dublin
-    //     // close to Code Institute's office
-        location.lat = 53.251042
-        location.lng = -6.150902
-    // }
-    return location;
+            },
+            function (error) {
+                // render dummy events around Dublin
+                map.flyTo([location.lat, location.lng], 12)
+                map.setMaxZoom(18);
+                map.setMinZoom(5);
+                for (let i = 1; i <= 3; i++) {
+                    const id = `event-icon-nr${i}`
+                    customMarker(id);
+        }
+            })
+    } 
+    else {
+        // render dummy events around Dublin
+        map.flyTo([location.lat, location.lng], 12)
+        map.setMaxZoom(18);
+        map.setMinZoom(5);
+        for (let i = 1; i <= 3; i++) {
+            const id = `event-icon-nr${i}`
+            customMarker(id);
+        }
+    }
 }
 
-
-function customMarker(id) {
+function customMarker(time, date, title, img, lat, lng) {
     
-    const myElement = document.getElementById(id);
-    myElement.style['background-image'] = myElement.dataset.image;
-    const lat = myElement.dataset.lat;
-    const lng = myElement.dataset.lng;
+    const myElement = document.createElement('div');
+    myElement.style['background-image'] = img;
+
+    const time = document.createElement('div');
+    time.className = 'event-time';
+    myElement.appendChild(time);
+    time.textContent = time;
+
+    const date = document.createElement('div');
+    date.className = 'event-date';
+    myElement.appendChild(date);
+    date.textContent = date;
+
+    const title = document.createElement('div');
+    title.className = 'event-title';
+    myElement.appendChild(title);
+    title.textContent = title;
+
     const myIcon = L.divIcon({ html: myElement, className: 'event-icon' });
 
 	L.marker([lat, lng], { icon: myIcon }).addTo(map);
