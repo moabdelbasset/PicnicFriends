@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block extra_title %}All Events{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% if keyword %}
+        <h2>Your results for {{ keyword }}</h2>
+        <hr>
+        {% for event in events %}
+           <a href="#"> {{ event }} </a> <hr>
+
+        {% endfor %}
+    {% else %}
+        <h2>No results found!</h2>
+    {% enfif %}
+</div>
+{% endblock %}
