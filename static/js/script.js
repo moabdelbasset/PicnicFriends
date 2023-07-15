@@ -4,16 +4,18 @@
 var map = L.map('map', {
     center: [53.251042, -6.150902],
     zoom: 9,
+    minZoom: 9,
     maxZoom: 9,
-    attribution: '© OpenStreetMap',
-    preferCanvas: true,
+    attribution: '© OpenStreetMap'
 })
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+L.tileLayer(
+    'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'},
+).addTo(map);
 
 
 const getUserLocation = () => {
-    console.log('getUserLocation')
     let location = {};
     if ('geolocation' in navigator) {
         
@@ -23,7 +25,10 @@ const getUserLocation = () => {
                 location.lat = position.coords.latitude;
                 location.lng = position.coords.longitude;
                 console.log(location)
-                map.flyTo([location.lat, location.lng], 15)
+                // map.panTo([location.lat, location.lng])
+                map.flyTo([location.lat, location.lng], 11)
+                map.setMaxZoom(18);
+                map.setMinZoom(5);
                 customMarker(location.lat, location.lng);
             },
             // if no location is provided, set the location to Dublin
@@ -44,7 +49,6 @@ const getUserLocation = () => {
 
 function customMarker(lat, lng) {
     
-    console.log(lat, lng);
     const myElement = document.getElementById('event-icon-nr1');
     myElement.style['background-image'] = myElement.dataset.image;
     const myIcon = L.divIcon({ html: myElement, className: 'event-icon' });
