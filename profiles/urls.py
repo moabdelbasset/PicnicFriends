@@ -6,5 +6,5 @@ from .views import (
 
 urlpatterns = [
     path('user/<slug:pk>/', ProfileView.as_view(), name="profile"),
-    path('edit/<int:pk>/', EditProfile.as_view(), name='profile_edit'),
+    path('edit/<slug:pk>/', EditProfile.as_view(), name='profile_edit')
 ]
