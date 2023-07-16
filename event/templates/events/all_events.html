@@ -11,7 +11,12 @@
                 </strong></button></a>
     </div>
     <div class="row mt-5">
+        {% if 'search_event' in request.path %}
+        <h2 class="card-title d-flex justify-content-center mt-5 mb-2">Your search results</h2>
+        {% else %}
         <h2 class="card-title d-flex justify-content-center mt-5 mb-2">Upcomming Events</h2>
+        {% endif %}
+
     </div>
 
     {% for event in event %}
@@ -35,6 +40,7 @@
                     <h6 class="card-title">Address: {{ event.address }}</h6>
                     <p class="card-text">
                     <ul class="list-group-flush">
+                        <li class="list-group-item">Description: {{ event.description }}</li>
                         <li class="list-group-item">Date and time: {{ event.event_date }}</li>
                         <li class="list-group-item">Organizer: {{ event.author }}</li>
                         <li class="list-group-item">Phone no: {{ event.phone }}</li>
