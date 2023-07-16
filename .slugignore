@@ -1,0 +1,11 @@
+.git
+.gitignore
+/docs
+/media
+.env
+.editorconfig
+.idea
+.vscode
+/node_modules
+/venv
+/virtualenv
