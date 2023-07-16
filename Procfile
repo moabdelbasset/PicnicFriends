@@ -1,0 +1,1 @@
+web: gunicorn Picnic_Friends.wsgi
