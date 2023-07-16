@@ -8,7 +8,8 @@
         <div class="row">
             <div class="col-md-8 mt-3 offset-md-2 pl-0 pr-0">
                 <p>Welcome to Picnic Friends! Some more text about the app and bla bla bla</p>
-                <h2>Upcoming events</h2>
+                <h2>Upcoming events</h2> 
+                {% include 'home/calendar.html' %}               
                 <div class="event-card-group">
                     <div class="event-card">
                       <img src="./static/images/calvin-shelwell.jpg" class="" alt="picnic picture">
@@ -20,8 +21,8 @@
                     </div>
                   </div>
                 
-                <a href="{% url 'add_event' %}"><button class="btn"><strong>
-                    Create a new event
+                <a href="{% url 'all_events' %}"><button class="btn"><strong>
+                    Check Events
                 </strong></button></a>
             </div>
         </div>

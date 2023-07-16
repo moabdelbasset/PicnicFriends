@@ -117,6 +117,74 @@ h2 {
   color: green;
 }
 
+/*  Pagination */
+
+
+.pagination-box {
+  margin-bottom: 25px;
+}
+
+.pagination {
+  padding-left: 0;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.pagination li {
+  display: inline-block;
+}
+
+.pagination > li > a {
+  color: #1a1715;
+  font-size: 18px;
+  background: #fff;
+  font-weight: 400;
+}
+
+.pagination > li > a i{
+  font-size: 15px;
+  font-weight: 600;
+}
+.pagination > li > a, .pagination > li > span {
+  margin: 0 2px 5px;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  background: #fff;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.pagination .page-item:first-child .page-link {
+  border-radius: 0;
+}
+
+.pagination .page-item:last-child .page-link {
+  border-radius: 0;
+}
+.page-item a:hover {
+  background-color: #33240e!important;
+ 
+}
+.pagination > li > a:hover {
+  color: #eecfb5!important;
+}
+
+.pagination > li > .active {
+  color: #e96711!important;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1)!important;
+}
+
+.page-link:focus {
+  box-shadow: 1px 1px 1px 1px rgb(53, 29, 2)!important;
+}
+
+.active>.page-link, .page-link.active{
+  background-color: #FDE59A;
+}
 
 /* Footer */
 footer {

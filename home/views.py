@@ -6,7 +6,7 @@ from event.models import Event
 
 
 def index(request):
-    """ A view to return the index page """
+    """ A view to return the index page """    
 
     events_script = list(Event.objects.values(
         'id',
@@ -26,3 +26,5 @@ def index(request):
         context = super().get_context_data(**kwargs)
         profile = Profile.objects.get(user=self.request.user)
         context["profile"] = profile
+
+
