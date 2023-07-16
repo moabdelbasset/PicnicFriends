@@ -33,6 +33,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 ALLOWED_HOSTS = [os.environ.get("HOST"), '127.0.0.1', 'localhost', 'picnicfriends-b3d57c6873d2.herokuapp.com']
 
 # Application definition
