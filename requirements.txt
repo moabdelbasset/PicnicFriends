@@ -6,7 +6,7 @@ Babel==2.12.1
 charset-normalizer==3.1.0
 cloudinary==1.33.0
 cmake==3.26.4
-colorama==0.4.6
+#colorama==0.4.6
 contourpy==1.1.0
 crispy-bootstrap5==0.7
 cryptography==41.0.1
