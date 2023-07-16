@@ -1,5 +1,5 @@
 :root {
-  --main-font-color: rgb(31, 31, 85);
+  --main-font-color: #1f1f55;
 }
 
 html{
@@ -39,10 +39,6 @@ button.navbar-toggler {
 
 button.navbar-toggler:focus {
   box-shadow: none;
-}
-
-button.navbar-toggler > svg {
-  stroke: var(--main-font-color);
 }
 
 #burger-icon {
