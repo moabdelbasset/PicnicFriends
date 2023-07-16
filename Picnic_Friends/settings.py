@@ -33,10 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get("HOST"), '127.0.0.1', 'localhost',
-    'picnicfriends.herokuapp.com',
-    '8000-fitabigail-picnicfriend-xcna2nmep2p.ws-eu101.gitpod.io',
-    '8000-szilviacser-picnicfrien-qjh7h4cr6kg.ws-eu101.gitpod.io']
+ALLOWED_HOSTS = [os.environ.get("HOST"), '127.0.0.1', 'localhost', 'picnicfriends-b3d57c6873d2.herokuapp.com', 'picnicfriends.herokuapp.com', '8000-fitabigail-picnicfriend-xcna2nmep2p.ws-eu101.gitpod.io', '8000-szilviacser-picnicfrien-qjh7h4cr6kg.ws-eu101.gitpod.io',]
 
 # Application definition
 
