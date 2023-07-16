@@ -30,39 +30,7 @@ titleControl.onAdd = function(map) {
 
 titleControl.addTo(map);
 
-// const events = document.getElementById('events');
-
-// Dummy events
-const events = [
-    { 
-        id: 1,
-        time: "10:00 AM",
-        date: "Saturday, 22nd July",
-        title: "Beach Party",
-        img: "url('./static/images/toa-heftiba.jpg')",
-        lat: "53.2",
-        lng: "-6.1"
-    },
-    { 
-        id: 2,
-        time: "3:00 PM",
-        date: "Saturday, 22nd July",
-        title: "Picnic on the Heath",
-        img: "url('./static/images/taisiia-shestopal.jpg')",
-        lat: "53.22",
-        lng: "-6.15"
-    },
-    { 
-        id: 3,
-        time: "11:00 AM",
-        date: "Sunday, 23rd July",
-        title: "Sunday Brunch",
-        img: "url('./static/images/calvin-shelwell.jpg')",
-        lat: "53.27",
-        lng: "-6.17"
-    }
-    
-]
+const events = JSON.parse(document.getElementById('events_script_json').textContent);
 
 
 const getUserLocation = (callback) => {
@@ -89,7 +57,7 @@ const getUserLocation = (callback) => {
                 // render dummy events around Dublin
                 map.flyTo([location.lat, location.lng], 12)
                 map.setMaxZoom(18);
-                map.setMinZoom(5);
+                // map.setMinZoom(5);
 
                 callback([location.lat, location.lng]);
 
@@ -99,7 +67,7 @@ const getUserLocation = (callback) => {
         // render dummy events around Dublin
         map.flyTo([location.lat, location.lng], 12)
         map.setMaxZoom(18);
-        map.setMinZoom(5);
+        // map.setMinZoom(5);
 
         callback([location.lat, location.lng]);
     }
@@ -107,11 +75,20 @@ const getUserLocation = (callback) => {
 
 function customMarker(event) {
     
-    const {time, date, title, img, lat, lng} = event;
+    const {event_date, name, image, latitude, longitude} = event;
+
+    const dateTime = new Date(event_date);
+
+    // Get date
+    const date = dateTime.toLocaleDateString(undefined, { dateStyle: 'medium' });
+
+    // Get time
+    const options = { hour: 'numeric', minute: 'numeric', hour12: true };
+    const time = dateTime.toLocaleTimeString(undefined, options);
 
     const myElement = document.createElement('div');
     myElement.className = 'event-icon'
-    myElement.style['background-image'] = img;
+    myElement.style['background-image'] = `url('./media/${image}`;
 
     const eventTime = document.createElement('div');
     eventTime.className = 'event-time';
@@ -126,11 +103,11 @@ function customMarker(event) {
     const eventTitle = document.createElement('div');
     eventTitle.className = 'event-title';
     myElement.appendChild(eventTitle);
-    eventTitle.textContent = title;
+    eventTitle.textContent = name;
 
     const myIcon = L.divIcon({ html: myElement, className: 'event-icon' });
 
-	L.marker([lat, lng], { icon: myIcon }).addTo(map);
+	L.marker([latitude, longitude], { icon: myIcon }).addTo(map);
 }
 
 function findDistance(loc1, loc2) {
@@ -143,35 +120,32 @@ function findDistance(loc1, loc2) {
 function eventDistances(loc1, events) {
     distances = {};
     for (const e of events) {
-        const loc2 = [e.lat, e.lng]
+        const loc2 = [e.latitude, e.longitude]
         const dist = findDistance(loc1, loc2)
         distances[dist] = e.id 
     }
-    console.log(distances)
     return distances
 }
 
 function findClosestEvent(location) {
     const distances = eventDistances(location, events);
-    console.log(Object.keys(distances))
 
-    // render the closest 3 events on the map and delete them from the array
+    // render the closest 3 events on the map
     for (let i = 0; i < 3; i++ ) {
 
         const minDistance = Math.min(...Object.keys(distances))
-        console.log(minDistance)
 
         const closestEventId = distances[minDistance]
 
         const closestEvent = events.find(e => e.id === closestEventId)
-        customMarker(closestEvent)
+        if (closestEvent) {
+            customMarker(closestEvent)
+        }
         
-        // delete the found element from the events array
+        // delete the found element from the distances object
         delete distances[minDistance]
-        console.log(distances)
     }
     
 }
 
 getUserLocation(findClosestEvent);
-
