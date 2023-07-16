@@ -17,6 +17,10 @@
             <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page"
               href="{% url 'home' %}">Home</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {% if url_name == 'all_events' %}active{% endif %}" aria-current="page"
+              href="{% url 'all_events' %}">Events</a>
+          </li>
           {% if request.user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link {% if url_name == 'profile' %}active{% endif %}"
@@ -36,10 +40,20 @@
           </li>
           {% endif %}
         </ul>
+        
       </div>
     </div>
+    <form action="{% url 'search_event' %}" method="POST" class="d-flex">
+    {% csrf_token %}
+    <div class="input-group">
+      <input type="search" class="form-control rounded" placeholder="Search Events" name="search_query" aria-label="Search" aria-describedby="search-addon" />
+      <button type="submit" class="btn btn-outline-primary">search</button>
+    </div>
+  </form>
   </nav>
   
   {% endwith %}
+
+  
 </header>
 

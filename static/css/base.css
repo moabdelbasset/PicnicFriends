@@ -112,6 +112,12 @@ h2 {
     background-repeat: no-repeat;
 }
 
+.card-events {
+  background-color: #ffc1075d;
+  color: green;
+}
+
+
 /* Footer */
 footer {
     flex-shrink: 0;
