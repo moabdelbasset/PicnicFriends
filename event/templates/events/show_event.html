@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block extra_title %}Show Event{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid mb-5">
+
+    <div class="card mb-3 mt-5 h-100">
+        <div class="row g-0">
+            <div class="col-md-4">
+                {% if event.image %}
+                <img src="{{ event.image.url }}" class="img-fluid" alt="{{ event.name }}">
+                {% else %}
+                <img class="img-fluid" src="/media/images/noimage.png" alt="{{ event.name }}"
+                    style=" height: 35rem; width: auto;">
+                {% endif %}
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h4 class="card-title mb-2">{{event.name}}</h4>
+                    <h6 class="card-title">Address: {{ event.address }}</h6>
+                    <p class="card-text">
+                    <ul class="list-group-flush">
+                        <li class="list-group-item">Description: {{ event.description }}</li>
+                        <li class="list-group-item">Date and time: {{ event.event_date }}</li>
+                        <li class="list-group-item">Organizer: {{ event.author }}</li>
+                        <li class="list-group-item">Phone no: {{ event.phone }}</li>
+                        <li class="list-group-item">Email address: {{ event.email }}</li>
+                        <li class="list-group-item">Location: {{ event.address }}</li>
+                        <li class="list-group-item">Attendees: </li><br>
+                        {% for user in event.attendees.all %}
+                        {{ user }} <br>
+                        {% endfor %}
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+            <a href="{% url 'all_events' %}" class="btn rounded-0 my-2">
+                <span class="icon mr-2">
+                    <i class="fas fa-angle-left"></i>
+                </span>
+                <span class="text-uppercase">Back to Events</span>
+            </a>
+            <div class="row pt-2 pb-5 h-100 text-mute position-relative">
+                <a href="{% url 'update_event' event.id%}"><button
+                        class="btn position-absolute bottom-0 start-0"><strong>
+                            Update Event
+                        </strong></button> </a>
+                <a href="{% url 'delete_event' event.id%}"><button class="btn position-absolute bottom-0 end-0"><strong>
+                            Delete Event
+                        </strong></button> </a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+{% endblock %}
