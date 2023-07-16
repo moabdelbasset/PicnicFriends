@@ -44,6 +44,7 @@
                 </span>
                 <span class="text-uppercase">Back to Events</span>
             </a>
+            {% if request.user == event.author %}
             <div class="row pt-2 pb-5 h-100 text-mute position-relative">
                 <a href="{% url 'update_event' event.id%}"><button
                         class="btn position-absolute bottom-0 start-0"><strong>
@@ -53,6 +54,7 @@
                             Delete Event
                         </strong></button> </a>
             </div>
+            {%endif%}
         </div>
 
     </div>
