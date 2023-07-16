@@ -139,8 +139,8 @@ WSGI_APPLICATION = 'Picnic_Friends.wsgi.application'
 #}
 
 DATABASES = {
-    'default': dj_database_url.parse("postgres://eyubmazn:piE-irKyY2vQCcoy3gcZcNBoacwK22N-@snuffleupagus.db.elephantsql.com/eyubmazn")
-}
+     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+ }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
