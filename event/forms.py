@@ -52,5 +52,3 @@ class EventForm(forms.ModelForm):
             'description': forms.Textarea(attrs={
                 'class': 'form-control', 'placeholder': 'Decribe Event'}),
          }
-
-        
