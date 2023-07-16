@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-
-from django.core.paginator import Paginator
+from django.http import HttpResponseRedirect
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db.models import Q
 from . models import Event
 from . forms import EventForm
