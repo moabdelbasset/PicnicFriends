@@ -86,5 +86,3 @@ def search_event(request):
         return render(request, 'events/all_events.html', {'query': search_query, 'event': event})
     else:
         return render(request, 'events/all_events.html', {})
-
-    

@@ -1,18 +1,17 @@
+<!-- template.html -->
 {% extends "base.html" %}
 {% load static %}
-{% load crispy_forms_tags %}
 {% block extra_title %}Add Event{% endblock %}
-
 
 {% block content %}
 <div class="container-fluid bg">
-
     <div class="row d-flex justify-content-center h-50">
         <div class="col-12 col-md-10">
             <div class="card card-form">
                 <div class="row h-100">
                     <div class="col-md-6 bg-card">
-                        
+                        <!-- Leaflet map -->
+                        <div id="map" style="height: 400px; width: auto;"></div>
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
@@ -20,19 +19,30 @@
                             <h2 class="card-title d-flex justify-content-center mt-4 mb-4">Add Event</h2>
                             <form action="{% url 'add_event' %}" method="POST" enctype="multipart/form-data">
                                 {% csrf_token %}
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control text-mute mb-3" placeholder="Event Name">
+                                </div>
+                                <div class="form-group"><label for="image">Event Image</label>
+                                    <input type="file" name="image" class="form-control-file mb-3" id="image">
+                                </div>
+                                <div class="form-group">
+                                    <input type="datetime-local" name="event_date" class="form-control text-mute mb-3" placeholder="Event Date and Time">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="phone" class="form-control text-mute mb-3" placeholder="Phone number">
 
-                                {% for field in form %}
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="description" class="form-control" rows="4" placeholder="Event Description"></textarea>
+                                </div>
 
-                                {% if field.name != 'image' %}
-                                {{ field | as_crispy_field }}
-                                {% else %}
-                                {{ field }}
-                                {% endif %}
-
-                                {% endfor %}
-                             
+                                <div class="form-group">
+                                    <input type="hidden" name="author" value="{{ user.username }}">
+                                </div>
+                                <!-- Add other form fields here -->
+                                <input type="hidden" id="latitude" name="latitude">
+                                <input type="hidden" id="longitude" name="longitude">
                                 <input type="submit" value="Submit" class="btn btn-outline-dark btn-lg mt-2 mb-5">
-                       
                             </form>
                             {% else %}
                             <p class="mt-5 d-flex justify-content-center">To <strong> Add an Event</strong> you need to
@@ -47,6 +57,6 @@
             </div>
         </div>
     </div>
-
 </div>
+
 {% endblock %}
