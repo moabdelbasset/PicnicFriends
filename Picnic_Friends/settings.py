@@ -35,7 +35,7 @@ DEBUG = True
 
 #X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = [os.environ.get("HOST"), '127.0.0.1', 'localhost', 'picnicfriends-b3d57c6873d2.herokuapp.com', 'https://8000-emeliemarkk-picnicfrien-2p68rhflcxz.ws-eu101.gitpod.io/']
+ALLOWED_HOSTS = [os.environ.get("HOST"), '127.0.0.1', 'localhost', 'picnicfriends-b3d57c6873d2.herokuapp.com', '8000-emeliemarkk-picnicfrien-2p68rhflcxz.ws-eu101.gitpod.io']
 
 # Application definition
 
@@ -192,8 +192,9 @@ LOGIN_REDIRECT_URL = '/'
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
