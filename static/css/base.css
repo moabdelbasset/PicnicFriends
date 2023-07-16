@@ -1,11 +1,15 @@
-html{
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    
+:root {
+  --main-font-color: rgb(31, 31, 85);
 }
 
-body, #map {
-    height: 80%; 
+html{
+    height: 100%;
+}
+
+body, #map { 
+    font-family: 'Quicksand', sans-serif;
+    color: var(--main-font-color);
+    height: 85%; 
     width: 100vw;
     padding: 0;
     margin: 0;
@@ -32,6 +36,43 @@ img.logo {
     border-bottom: 2px solid var(--blue);
     font-weight: 500;
 }
+
+/* Home Page */
+
+.app-title {
+  font-family: 'Oswald';
+  font-size: 1.6rem;
+  margin-right: .5rem;
+}
+
+h2 {
+  font-family: 'Oswald';
+  font-size: 1.4rem;
+}
+
+.event-card-group {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.event-card {
+  margin: 1rem;
+  display: flex;
+  background-color: #57a63327;
+}
+
+.event-card > img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.event-card > .card-body {
+  padding: 1rem;
+}
+
 
 /* Add Event Page */
 

@@ -1,10 +1,3 @@
-#map {
-    height: 90%; 
-    width: 100vw;
-    padding: 0;
-    margin: 0;
-}
-
 .event-icon {
     height: 12rem;
     width: 12rem;
@@ -29,12 +22,12 @@
 .event-icon > div {
     line-height: 1rem;
     font-weight: bold;
-    color: rgb(31, 31, 85);
     text-shadow: 0px 0px 1px white, 0px 0px 5px white, 0px 0px 20px white;
 }
 
 .event-icon > div.event-time {
-    font-size: .9rem;
+    font-family: 'Oswald';
+    font-size: 1rem;
 }
 
 .event-icon > div.event-date {
@@ -42,5 +35,6 @@
 }
 
 .event-icon > div.event-title {
+    font-family: 'Oswald';
     font-size: 1.1rem;
 }
