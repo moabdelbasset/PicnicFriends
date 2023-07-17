@@ -27,9 +27,7 @@
                         <li class="list-group-item">Date and time: {{ event.event_date }}</li>
                         <li class="list-group-item">Organizer: {{ event.author }}</li>
                         <li class="list-group-item">Phone no: {{ event.phone }}</li>
-                        <li class="list-group-item">Email address: {{ event.email }}</li>
                         <li class="list-group-item">Location: {{ event.address }}</li>
-                        <li class="list-group-item">Attendees: </li><br>
                         {% for user in event.attendees.all %}
                         {{ user }} <br>
                         {% endfor %}

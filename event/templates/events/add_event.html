@@ -22,7 +22,8 @@
                                 <div class="form-group">
                                     <input type="text" name="name" class="form-control text-mute mb-3" placeholder="Event Name">
                                 </div>
-                                <div class="form-group"><label for="image">Event Image</label>
+                                <label for="image">Event image</label>
+                                <div class="form-group">
                                     <input type="file" name="image" class="form-control-file mb-3" id="image">
                                 </div>
                                 <div class="form-group">
@@ -39,7 +40,6 @@
                                 <div class="form-group">
                                     <input type="hidden" name="author" value="{{ user.username }}">
                                 </div>
-                                <!-- Add other form fields here -->
                                 <input type="hidden" id="latitude" name="latitude">
                                 <input type="hidden" id="longitude" name="longitude">
                                 <input type="submit" value="Submit" class="btn btn-outline-dark btn-lg mt-2 mb-5">
