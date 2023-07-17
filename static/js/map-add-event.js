@@ -35,8 +35,8 @@ function addMarker(latlng) {
         map.removeLayer(marker);
     }
     marker = L.marker(latlng).addTo(map);
-    document.getElementById('latitude').value = latlng.lat.toFixed(6);
-    document.getElementById('longitude').value = latlng.lng.toFixed(6);
+    document.getElementById('id_latitude').value = latlng.lat.toFixed(6);
+    document.getElementById('id_longitude').value = latlng.lng.toFixed(6);
 }
 
 // Add click event listener to the map
