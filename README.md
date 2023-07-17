@@ -53,7 +53,7 @@ Landing page
 
 Sign up page
 
-![Sign up](readme-images/signup.jpg)
+![Sign up](readme-images/signup.jpeg)
 
 Sign in page
 
