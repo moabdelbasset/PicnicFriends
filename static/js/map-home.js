@@ -86,7 +86,7 @@ function customMarker(event) {
 
     const myElement = document.createElement('div');
     myElement.className = 'event-icon'
-    myElement.style['background-image'] = `url('./media/${image}`;
+    myElement.style['background-image'] = `url('${image}')`;
 
     const eventTime = document.createElement('div');
     eventTime.className = 'event-time';
