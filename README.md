@@ -38,14 +38,6 @@ In order to streamline development and ensure efficient project management, Picn
 
 ✨ Presentation Quality - Present as if you are pitching it to client
 
-Introducing Picnic Friends, the standalone app that revolutionizes the way people connect and build friendships through the joy of picnics!
-
-Our app is solely dedicated to helping individuals like your users discover and join exciting picnic events in their area. With Picnic Friends, your users can easily organize their own picnics and invite others to join, or explore a dynamic map that showcases ongoing picnics near them. Our app's interactive map even integrates with their device's location services, ensuring they never miss out on a nearby gathering.
-
-With Picnic Friends, you provide your users with a unique and engaging social experience centered around outdoor activities. From tranquil park picnics to adventurous hikes, Picnic Friends empowers individuals to expand their social circles, explore their local community, and create lasting memories with like-minded people.
-
-Don't miss out on the opportunity to connect, socialize, and have a blast with Picnic Friends; together, we'll create a vibrant community where friendships flourish amidst the beauty of the great outdoors.
-
 ## Intro
 
 Welcome to Picnic Friends, the ultimate app for connecting with new friends while enjoying the great outdoors! Our app is designed to bring people together through the shared experience of picnics. Making new friends as adults can be challenging, which is why we've created a platform that makes it easy to meet like-minded individuals in your local community.
