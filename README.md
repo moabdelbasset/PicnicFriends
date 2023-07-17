@@ -5,12 +5,12 @@
 </h1>
 
 
-![Summer of Code Banner](https://res.cloudinary.com/djdefbnij/image/upload/v1688114955/Summer_2_owummy.png)
+![Summer of Code Banner](readme-images/banner.jpg)
 
 # SUBMISSION
 ## Deployment
 #### _(please note, your team must also include the deployed links in the usual submission in Hackapp)_
-The project is deployed and can be accessed at [http://your-deployed-link.com](http://your-deployed-link.com).
+The project is deployed and can be accessed at [https://picnicfriends-b3d57c6873d2.herokuapp.com/](https://picnicfriends-b3d57c6873d2.herokuapp.com/).
 
 ## Criteria
 
@@ -37,6 +37,14 @@ Picnic Friends promotes a healthy lifestyle and fosters connections among people
 In order to streamline development and ensure efficient project management, Picnic Friends employs the use of Github Project Boards and Issues. This allowed our team to create and track user stories, ensuring transparency, collaboration, and efficient project management. It provided a clear overview of tasks and progress, ensuring smooth execution throughout development.
 
 ✨ Presentation Quality - Present as if you are pitching it to client
+
+Introducing Picnic Friends, the standalone app that revolutionizes the way people connect and build friendships through the joy of picnics!
+
+Our app is solely dedicated to helping individuals like your users discover and join exciting picnic events in their area. With Picnic Friends, your users can easily organize their own picnics and invite others to join, or explore a dynamic map that showcases ongoing picnics near them. Our app's interactive map even integrates with their device's location services, ensuring they never miss out on a nearby gathering.
+
+With Picnic Friends, you provide your users with a unique and engaging social experience centered around outdoor activities. From tranquil park picnics to adventurous hikes, Picnic Friends empowers individuals to expand their social circles, explore their local community, and create lasting memories with like-minded people.
+
+Don't miss out on the opportunity to connect, socialize, and have a blast with Picnic Friends; together, we'll create a vibrant community where friendships flourish amidst the beauty of the great outdoors.
 
 
 # ABOUT SUBMISSION
@@ -98,4 +106,4 @@ By using Picnic Friends, users can benefit from the opportunity to expand their 
 - [Leaflet JS Maps](https://leafletjs.com/)
 - Wireframes created in [Balsamiq](https://balsamiq.com/)
 - [Picnic marker image](https://unsplash.com/photos/it-VGwoQ6XQ)
- 
+- Banner from [Freepik](https://www.freepik.com/free-photos-vectors/picnic-scene)
