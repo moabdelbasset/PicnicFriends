@@ -1,4 +1,4 @@
-//Leaflet map that renders the users location
+//Leaflet map that renders the 3 events closest to user's browser location
 
 
 const map = L.map('map', {
@@ -7,9 +7,7 @@ const map = L.map('map', {
     minZoom: 9,
     maxZoom: 9,
     attribution: '© OpenStreetMap',
-    preferCanvas: true,
-    dragging: false,
-    scrollWheelZoom: false
+    preferCanvas: true
 })
 
 L.tileLayer(
@@ -57,7 +55,7 @@ const getUserLocation = (callback) => {
                 // render dummy events around Dublin
                 map.flyTo([location.lat, location.lng], 12)
                 map.setMaxZoom(18);
-                // map.setMinZoom(5);
+                map.setMinZoom(5);
 
                 callback([location.lat, location.lng]);
 
@@ -67,7 +65,7 @@ const getUserLocation = (callback) => {
         // render dummy events around Dublin
         map.flyTo([location.lat, location.lng], 12)
         map.setMaxZoom(18);
-        // map.setMinZoom(5);
+        map.setMinZoom(5);
 
         callback([location.lat, location.lng]);
     }
