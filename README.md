@@ -68,6 +68,9 @@ Sign in page
 
 ![Sign in](readme-images/signin.jpg)
 
+Navbar
+![Navbar](readme-images/navbar.jpg)
+
 All events page
 
 ![All events](readme-images/all-events.jpg)
