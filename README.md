@@ -5,12 +5,12 @@
 </h1>
 
 
-![Summer of Code Banner](https://res.cloudinary.com/djdefbnij/image/upload/v1688114955/Summer_2_owummy.png)
+![Summer of Code Banner](readme-images/banner.jpg)
 
 # SUBMISSION
 ## Deployment
 #### _(please note, your team must also include the deployed links in the usual submission in Hackapp)_
-The project is deployed and can be accessed at [http://your-deployed-link.com](http://your-deployed-link.com).
+The project is deployed and can be accessed at [https://picnicfriends-b3d57c6873d2.herokuapp.com/](https://picnicfriends-b3d57c6873d2.herokuapp.com/).
 
 ## Criteria
 
@@ -38,8 +38,14 @@ In order to streamline development and ensure efficient project management, Picn
 
 ✨ Presentation Quality - Present as if you are pitching it to client
 
+Introducing Picnic Friends, the standalone app that revolutionizes the way people connect and build friendships through the joy of picnics!
 
-# ABOUT SUBMISSION
+Our app is solely dedicated to helping individuals like your users discover and join exciting picnic events in their area. With Picnic Friends, your users can easily organize their own picnics and invite others to join, or explore a dynamic map that showcases ongoing picnics near them. Our app's interactive map even integrates with their device's location services, ensuring they never miss out on a nearby gathering.
+
+With Picnic Friends, you provide your users with a unique and engaging social experience centered around outdoor activities. From tranquil park picnics to adventurous hikes, Picnic Friends empowers individuals to expand their social circles, explore their local community, and create lasting memories with like-minded people.
+
+Don't miss out on the opportunity to connect, socialize, and have a blast with Picnic Friends; together, we'll create a vibrant community where friendships flourish amidst the beauty of the great outdoors.
+
 ## Intro
 
 Welcome to Picnic Friends, the ultimate app for connecting with new friends while enjoying the great outdoors! Our app is designed to bring people together through the shared experience of picnics. Making new friends as adults can be challenging, which is why we've created a platform that makes it easy to meet like-minded individuals in your local community.
@@ -47,6 +53,51 @@ Welcome to Picnic Friends, the ultimate app for connecting with new friends whil
 With Picnic Friends, you can create your own picnic events and invite others to join you, or explore the interactive map to discover ongoing picnics near you. The map not only shows you the location of each event but also displays your current position, making it convenient to find picnics happening nearby. Whether you're looking for a relaxing day in the park or an adventurous hike with fellow picnic enthusiasts, Picnic Friends is here to help you connect, socialize and create lasting memories.
 
 Say goodbye to lonely afternoons and hello to new friendships!
+
+## Picnic Friends features
+
+Landing page
+
+![Landing page](readme-images/homepage.jpg)
+
+Sign up page
+
+![Sign up](readme-images/signup.jpg)
+
+Sign in page
+
+![Sign in](readme-images/signin.jpg)
+
+Navbar
+![Navbar](readme-images/navbar.jpg)
+
+All events page
+
+![All events](readme-images/all-events.jpg)
+
+Detailed events page
+
+![Event](readme-images/event.jpg)
+
+Edit and delete button for author
+
+![User view event](readme-images/user-edit-delete.jpg)
+
+Form for posting event
+
+![Event form](readme-images/form.jpg)
+
+Edit event form
+
+![Edit form](readme-images/edit-form.jpg)
+
+User bio
+
+![Bio](readme-images/bio.jpg)
+
+Sign out message
+
+![Sign out](readme-images/signout.jpg)
 
 ## Goal
 
@@ -65,6 +116,18 @@ The target audience for this app includes individuals of all ages who are intere
 ➡️ Benefits
 
 By using Picnic Friends, users can benefit from the opportunity to expand their social network, discover interesting picnic spots and create lasting memories with like-minded individuals.
+
+
+## The Picnitech team
+
+### [Szilvia Csernusne Berczes](https://github.com/szilvia-csernus)
+
+### [Mohamed Ayman](https://github.com/moabdelbasset)
+
+### [AbiDinu]()
+
+### [Emelie Markkanen Åberg](https://github.com/EmelieMarkkanen)
+
 
 ## Wireframes
 
@@ -92,10 +155,62 @@ By using Picnic Friends, users can benefit from the opportunity to expand their 
 - Github
 - Heroku
 
+
+## Bugs
+
+### Fixed
+
+### Not fixed
+
+## Deployment
+
+### Github & Gitpod
+
+We created a repository in Github, named it ´picnicfriends´, and used the template Code-Institute-Org/gitpod-full-template
+
+- Once the repository is created, click the green button to the right (Gitpod) to open a new Gitpod workspace. 
+- To open and work on the project it is best to open the workspace from Gitpod workspaces (rather than Github), this will open your previous workspace rather than creating a new one. You should pin the workspace. 
+- Committing changes should be donSe often and should have clear messages. Use the following commands to make your commits:
+    - `git add .`: adds all modified files to a staging area
+    - `git commit -m "A message explaining your commit"`: commits all changes to a local repository.
+    - `git push`: pushes all your committed changes to your Github repository.
+- While working on the project I used the Gitpod development server to view the website in action. To start the development server run the following command: `Python3 manage.py runserver`. 
+
+### Create a Django project and app
+
+- Install Django and supporting libraries. I've used Gunicorn, Cloudinary and psycopg2 to start. 
+- In the terminal of the Gitpod workspace type django-admin startproject 'project_name' - project_name is desired project name
+- In the terminal of the Gitpod workspace type python3 manage.py startapp 'app_name' - app_name is desired app name 
+- Create a Requirements.txt file (type pip3 freeze --local > requirements.txt), a env.py file and Procfile on the top level of the project directory. 
+- In settings.py add the installed apps names into the installed apps array variable and save the file.
+- Move the SECRET KEY to the env.py file, and add the DATABASE URL and CLOUDINARY URL as well. 
+- Migrate changes by using the command python3 manage.py migrate.
+
+### ElephantSQL
+
+- Log into ElephantSQL or create new account.
+- Click to create new instance and set up the plan by giving it a name, I selected the tiny turtle plan. 
+- Select a region (data center) closest to your location. 
+- Click review, check that all the details are correct and then click create instance. 
+- Return to the ElephantSQL dashboard and click on the database instance name for the project.
+- Copy the ElephantSQL database URL that begin with 'postgres://' using the copy icon. 
+
+### Heroku
+
+We followed the steps in the Code Institute course material and [Django Blog cheatsheet](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
+
+- Log into Heroku or create an account.
+- Click ´New´ create new heroku app. Give the app an app name and select your region, I chose Europe. 
+- Open the app settings tab and click ´Reveal config vars´
+- Add a config var called ´DATABASE_URL´ and paste in the ElephantSQL database URL
+- Add the config var ´SECRET KEY´ with the secret key from the Django app settings.py file. It is recommended to create a new secret key for safety purposes. 
+- Add the config vars ´CLOUDINARY_URL´, ´DATABASE_URL´, ´PORT´ and ´DISABLE_COLLECTSTATIC´. 
+- Under the project deploy tab, select GitHub for the deployment method. Search for the repository name and click connect. Scroll down to the manual deployment section and click deploy branch. Make sure you have the main branch selected. 
+
 ## Credits
 - Logo from [SeekPNG](https://www.seekpng.com/ipng/u2q8y3y3q8u2w7y3_logo-picnic-basket/)
 - Favicon generated from [Favicon.io](https://favicon.io/)
 - [Leaflet JS Maps](https://leafletjs.com/)
 - Wireframes created in [Balsamiq](https://balsamiq.com/)
 - [Picnic marker image](https://unsplash.com/photos/it-VGwoQ6XQ)
- 
+- Banner from [Freepik](https://www.freepik.com/free-photos-vectors/picnic-scene)

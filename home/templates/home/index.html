@@ -9,28 +9,19 @@
             <div class="col-md-8 mt-3 offset-md-2 pl-0 pr-0">
                 <!-- <p>Welcome to Picnic Friends! Some more text about the app and bla bla bla</p> -->
                 {% if user.is_authenticated %}
-                <p>Welcome, {{ user.username }}! Discover the joy of outdoor gatherings with Picnic Friends, your ultimate summer event planner. Here, you can search and browse through a variety of picnic-themed events happening around you. Whether you're looking for a serene family outing, a lively social gathering, or a romantic sunset picnic, our platform has got you covered. Explore the upcoming events, register your interest, and let's make your summer memories unforgettable with Picnic Friends!</p>
+                <p>Welcome, {{ user.username }}! 
+                <br>Discover the joy of outdoor gatherings with Picnic Friends, your ultimate summer event planner. Here, you can search and browse through a variety of picnic-themed events happening around you. Whether you're looking for a serene family outing, a lively social gathering, or a romantic sunset picnic, our platform has got you covered. Explore the upcoming events, register your interest, and let's make your summer memories unforgettable with Picnic Friends!</p>
                 {% else %}
                 <p>Welcome to Picnic Friends! Discover the joy of outdoor gatherings with our comprehensive summer event planner. From serene family outings to lively social gatherings and romantic sunset picnics, our platform opens the door to a variety of picnic-themed events. Dive in to explore and let's make your summer unforgettable with Picnic Friends!</p>
                 {% endif %}
-                <h2>Upcoming events</h2> 
-                {% include 'home/calendar.html' %}               
-                <div class="event-card-group">
-                    <div class="event-card">
-                      <img src="./static/images/calvin-shelwell.jpg" class="" alt="picnic picture">
-                      <div class="card-body">
-                        <h5 class="card-title">Event title</h5>
-                        <p class="card-text">Date, time</p>
-                        <p class="card-text">Description</p>
-                      </div>
-                    </div>
-                  </div>
                 
                 <a href="{% url 'all_events' %}"><button class="btn"><strong>
-                    Check Events
+                    All Events
                 </strong></button></a>
+                
             </div>
         </div>
     </div>
     
 {% endblock %}
+
