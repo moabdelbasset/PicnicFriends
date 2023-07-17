@@ -7,10 +7,9 @@
 
 ![Summer of Code Banner](readme-images/banner.jpg)
 
-# SUBMISSION
-## Deployment
-#### _(please note, your team must also include the deployed links in the usual submission in Hackapp)_
-The project is deployed and can be accessed at [https://picnicfriends-b3d57c6873d2.herokuapp.com/](https://picnicfriends-b3d57c6873d2.herokuapp.com/).
+### View the live project here: [https://picnicfriends-b3d57c6873d2.herokuapp.com/](https://picnicfriends-b3d57c6873d2.herokuapp.com/).
+
+![Intro Page](readme-images/intro.jpeg)
 
 ## Criteria
 
