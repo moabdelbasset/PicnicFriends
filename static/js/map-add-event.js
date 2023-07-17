@@ -1,4 +1,3 @@
-// map.js
 
 let marker; // Declare the marker variable
 
